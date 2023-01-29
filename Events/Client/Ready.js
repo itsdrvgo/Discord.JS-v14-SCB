@@ -1,27 +1,22 @@
-const { Client, Events, ActivityType } = require("discord.js")
-const ms = require("ms")
+const { Events, ActivityType } = require("discord.js")
+const { CustomClient } = require("../../Structures/Classes/CustomClient")
 
 module.exports = {
     name: Events.ClientReady,
-    once: true,
 
     /**
-     * @param {Client} client
-     */
+    * @param {CustomClient} client
+    */
     execute(client) {
 
-        const { ws, user } = client
+        const { user } = client
 
-        console.log(`${user.username} is online!`)
+        console.log(`${user.tag} is online`)
 
-        setInterval(() => {
-            
-            user.setActivity({
-                name: `Ping: ${ws.ping} ms`,
-                type: ActivityType.Playing
-            })
-
-        }, ms("15s"))
+        user.setActivity({
+            name: "Netflix",
+            type: ActivityType.Watching
+        })
 
     }
 }

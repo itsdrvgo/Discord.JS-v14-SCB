@@ -1,8 +1,8 @@
-const { Client } = require("discord.js")
 const { loadFiles } = require("./FileLoader")
+const { CustomClient } = require("../Classes/CustomClient")
 
 /**
- * @param {Client} client
+ * @param {CustomClient} client
  */
 async function loadEvents(client) {
 

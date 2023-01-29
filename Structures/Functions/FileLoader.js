@@ -3,7 +3,7 @@ const { glob } = require("glob")
 const PG = promisify(glob)
 
 /**
- * @param {String} folderName 
+ * @param {String} folderName
  */
 async function loadFiles(folderName) {
 
