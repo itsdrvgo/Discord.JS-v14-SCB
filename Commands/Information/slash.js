@@ -1,4 +1,4 @@
-const { SlashCommandBuilder, ChatInputCommandInteraction, ChannelType } = require("discord.js");
+const { SlashCommandBuilder, ChatInputCommandInteraction, ChannelType, PermissionFlagsBits } = require("discord.js");
 const { CustomClient } = require("../../Structures/Classes/CustomClient");
 const Reply = require("../../Systems/Reply");
 
@@ -6,6 +6,7 @@ module.exports = {
     data: new SlashCommandBuilder()
         .setName("slash")
         .setDescription("This is a slash command")
+        .setDefaultMemberPermissions(PermissionFlagsBits.Administrator)
 
         .addSubcommand(sub => sub.setName("slice").setDescription("This is a slice").addStringOption(opt => opt.setName("string").setDescription("Provide a string").setRequired(true)))
         .addSubcommandGroup(grp => grp.setName("parts").setDescription("These are the commands").addSubcommand(sub => sub.setName("part").setDescription("This is a part").addStringOption(opt => opt.setName("string").setDescription("Provide a string").setRequired(true))))
