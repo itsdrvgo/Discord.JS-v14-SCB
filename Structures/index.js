@@ -19,4 +19,4 @@ const client = new CustomClient({
 
 loadEvents(client)
 
-client.login(process.env.TOKEN)
+client.start()
