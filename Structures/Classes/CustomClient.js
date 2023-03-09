@@ -2,6 +2,7 @@ const { Client, Colors, Collection } = require("discord.js")
 const emojis = require("../../emojis.json")
 const configuration = require("../../config.json")
 const mongoose = require("mongoose")
+const { Dashboard } = require("../../Dashboard")
 
 class CustomClient extends Client {
 
@@ -9,6 +10,7 @@ class CustomClient extends Client {
     emojiList = emojis
     config = configuration
     commands = new Collection()
+    dashboard = new Dashboard(this)
 
     start() {
 
@@ -17,6 +19,8 @@ class CustomClient extends Client {
 
         this.login(token)
             .then(() => {
+
+                this.dashboard.init()
 
                 if (!db) return
 

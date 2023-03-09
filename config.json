@@ -3,5 +3,7 @@
     "devGuildId": "1068486039712317520",
     "devs": ["536238813119381524"],
     "clientId": "1068483878379069490",
-    "clientSecret": "f6AaIddFw9Yx0P0WAQcwexR_S8cgeMB4"
+    "clientSecret": "f6AaIddFw9Yx0P0WAQcwexR_S8cgeMB4",
+    "port": 8000,
+    "domain": "http://localhost"
 }
