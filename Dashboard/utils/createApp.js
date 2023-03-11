@@ -4,7 +4,6 @@ const cors = require("cors")
 const { CustomClient } = require("../../Structures/Classes/CustomClient")
 
 /**
- * 
  * @param {CustomClient} client
  */
 function createApp(client) {
@@ -18,7 +17,7 @@ function createApp(client) {
     app.use(express.json())
     app.use(express.urlencoded({ extended: true }))
     app.use("/", routes)
-    
+
     return app
 
 }
