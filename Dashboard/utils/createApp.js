@@ -5,6 +5,8 @@ const { discordStrategy } = require("../strategies/discord")
 const passport = require("passport")
 const session = require("express-session")
 const ms = require("ms")
+const path = require("path")
+const store = require("connect-mongo")
 
 /**
  * @param {CustomClient} client
@@ -17,6 +19,9 @@ function createApp(client) {
 
     app.use(express.json())
     app.use(express.urlencoded({ extended: true }))
+    app.set("views", path.join(__dirname, "../views"));
+    app.use(express.static(path.join(__dirname, "../public")));
+    app.set("view engine", "ejs");
 
     app.use(session({
         secret: "UYIGFGALIOGILB79J7980U8",
@@ -24,7 +29,8 @@ function createApp(client) {
         saveUninitialized: false,
         cookie: {
             maxAge: ms("15m")
-        }
+        },
+        store: store.create({ mongoUrl: process.env.DATABASE })
     }))
 
     app.use(passport.initialize())

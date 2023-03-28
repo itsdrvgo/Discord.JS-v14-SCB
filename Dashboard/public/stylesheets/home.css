@@ -1,0 +1,36 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: "Poppins", sans-serif;
+}
+
+body {
+    min-height: 100vh;
+    background: #07061d;
+    color: #fff;
+    height: 100%;
+    overflow-x: hidden;
+}
+
+.main {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.main a.login_btn {
+    font-size: 1.5em;
+    color: #fff;
+    text-decoration: none;
+    background-color: #3448a1;
+    border: #fff;
+    border-radius: 15px;
+    padding: 15px 30px;
+}
+
+.main a.login_btn:hover {
+    background-color: #233379;
+    border-radius: 10px;
+}

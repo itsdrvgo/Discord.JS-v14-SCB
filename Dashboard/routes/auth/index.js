@@ -7,7 +7,7 @@ router.get("/discord", passport.authenticate("discord"), (req, res) => {
 })
 
 router.get("/discord/redirect", passport.authenticate("discord"), (req, res) => {
-    res.send("Success")
+    res.redirect("/account")
 })
 
 router.get("/status", (req, res) => {
