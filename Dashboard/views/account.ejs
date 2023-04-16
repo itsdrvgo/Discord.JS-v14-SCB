@@ -1,0 +1,28 @@
+<%- include("partials/header") -%>
+
+<link rel="stylesheet" href="/stylesheets/account.css">
+
+<div class="main">
+    <div class="mutualGuilds">
+        <h2>Mutual Guilds</h2>
+        <ul>
+            <% mutualGuilds.forEach((guild) => { %>
+                <li>
+                    <%= guild.name %> (<%= guild.id %>)
+                </li>
+            <% }) %>
+        </ul>
+    </div>
+    <div class="adminGuilds">
+        <h2>Admin Guilds</h2>
+        <ul>
+            <% adminButNotMutualGuilds.forEach((guild) => { %>
+                <li>
+                    <%= guild.name %> (<%= guild.id %>)
+                </li>
+            <% }) %>
+        </ul>
+    </div>
+</div>
+
+<%- include("partials/footer") -%>

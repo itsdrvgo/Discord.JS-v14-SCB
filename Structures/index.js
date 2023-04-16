@@ -19,4 +19,6 @@ const client = new CustomClient({
 
 loadEvents(client)
 
+module.exports = client
+
 client.start()
